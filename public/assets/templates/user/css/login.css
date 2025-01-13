@@ -1,0 +1,113 @@
+/*--------------------------------------------------------------
+# Login
+--------------------------------------------------------------*/
+
+body {
+    font-family: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    display: flex;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.image-section {
+    background-color: #e8f0fe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-section img {
+    width: 200px;
+    height: auto;
+}
+
+.form-section {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-section h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333333;
+}
+
+.form-section p {
+    margin: 5px 0 20px;
+    color: #666666;
+}
+
+.form-section label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-section button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.form-section button:hover {
+    background-color: #0056b3;
+}
+
+.form-section .create-account {
+    text-align: center;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-section .create-account:hover {
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 700px; /* Lebar maksimum container */
+    width: 90%;       /* Lebar relatif (untuk responsif) */
+}
+
+.form-section {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 350px; /* Ukuran maksimum form */
+    width: 100%;      /* Lebar penuh form-section */
+}
