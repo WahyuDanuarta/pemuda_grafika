@@ -32,25 +32,26 @@ class ProdukController extends Controller
             'nama_produk' => 'required|string|max:255',
             'harga' => 'required|numeric',
             'stok' => 'required|integer',
+            'deskripsi' => 'required|string', // Tambahkan validasi deskripsi
             'images.*' => 'required|mimes:png,jpeg,jpg', // Validasi untuk banyak gambar
             'kategori_id' => 'required|exists:kategori_produks,id',
         ]);
-
+    
         if ($validator->fails()) {
             Alert::error('Gagal!', 'Pastikan semua terisi dengan benar!');
             return redirect()->back()->withErrors($validator)->withInput();
         }
-
+    
         // Simpan produk
         $validatedData = $validator->validated();
         $produk = Produk::create($validatedData);
-
+    
         // Simpan gambar
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
                 $image->move(public_path('images'), $imageName);
-
+    
                 // Simpan ke tabel images
                 Image::create([
                     'produk_id' => $produk->id,
@@ -58,10 +59,11 @@ class ProdukController extends Controller
                 ]);
             }
         }
-
+    
         Alert::success('Berhasil!', 'Produk berhasil ditambahkan!');
         return redirect()->route('admin.produk');
     }
+    
 
     // Menambahkan fungsi show untuk detail produk
     public function detail($id)
@@ -84,6 +86,7 @@ class ProdukController extends Controller
             'nama_produk' => 'required|string|max:255',
             'harga' => 'required|numeric',
             'stok' => 'required|integer',
+            'deskripsi' => 'required|string', // Tambahkan validasi deskripsi
             'kategori_id' => 'required|exists:kategori_produks,id',
             'delete_images' => 'array', // Validasi untuk gambar yang akan dihapus
             'delete_images.*' => 'exists:images,id', // Pastikan ID gambar yang dihapus ada di tabel images
@@ -124,6 +127,7 @@ class ProdukController extends Controller
             'nama_produk' => $request->nama_produk,
             'harga' => $request->harga,
             'stok' => $request->stok,
+            'deskripsi' => $request->deskripsi, // Tambahkan deskripsi
             'kategori_id' => $request->kategori_id,
         ]);
 

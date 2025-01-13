@@ -155,6 +155,10 @@
                                         0822 4311 7852
                                     </a>
                                 </li>
+                                <li><strong>Deskripsi Produk</strong>:</li>
+                                    <li>
+                                        <p>{!! nl2br(e($produk->deskripsi ?? 'Deskripsi produk tidak tersedia.')) !!}</p>
+                                    </li>
                             </ul>
                         </div>
                         <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">

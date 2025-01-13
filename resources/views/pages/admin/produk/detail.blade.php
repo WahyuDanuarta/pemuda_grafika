@@ -54,6 +54,8 @@
                         <h5>Harga: Rp {{ number_format($produk->harga, 0, ',', '.') }}</h5>
                         <h5>Stok: {{ $produk->stok }}</h5>
                         <hr>
+                        <h5>Deskripsi:</h5>
+                        <p>{{ $produk->deskripsi }}</p>
                     </div>
                 </div>
             </div>

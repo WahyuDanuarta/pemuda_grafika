@@ -78,6 +78,17 @@
                             </div>
                         </div>
 
+                        <!-- Deskripsi Produk -->
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="deskripsi">Deskripsi Produk</label>
+                                <textarea id="deskripsi" class="form-control" name="deskripsi" rows="4" required>{{ old('deskripsi', $produk->deskripsi) }}</textarea>
+                                <div class="invalid-feedback">
+                                    Kolom ini harus diisi!
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Gambar Produk -->
                         <div class="col-12">
                             <div class="form-group">
@@ -102,7 +113,7 @@
                             </div>
 
                             <div class="form-group">
- <label for="customFile">Unggah Gambar Baru</label>
+                                <label for="customFile">Unggah Gambar Baru</label>
                                 <div class="custom-file">
                                     <input class="custom-file-input" name="images[]" id="customFile" type="file" multiple>
                                     <label class="custom-file-label" for="customFile">Pilih Gambar Baru</label>
@@ -129,7 +140,6 @@
 
 <script>
     document.getElementById('add-image').addEventListener('click', function() {
-        // Buat elemen baru untuk input gambar
         const newImageInput = document.createElement('div');
         newImageInput.classList.add('form-group');
         newImageInput.innerHTML = `
@@ -142,10 +152,9 @@
                 Kolom ini harus diisi!
             </div>
         `;
-        document.getElementById('additional-images').appendChild(newImageInput); // Menambahkan input baru di bawah kolom unggah gambar baru
+        document.getElementById('additional-images').appendChild(newImageInput);
     });
 
-    // Event delegation untuk menghapus input gambar
     document.getElementById('additional-images').addEventListener('click', function(e) {
         if (e.target.classList.contains('remove-image')) {
             e.target.closest('.form-group').remove();

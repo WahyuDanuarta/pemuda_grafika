@@ -75,6 +75,17 @@
                             </div>
                         </div>
 
+                        <!-- Deskripsi Produk -->
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="deskripsi">Deskripsi Produk</label>
+                                <textarea id="deskripsi" class="form-control" name="deskripsi" rows="5" required></textarea>
+                                <div class="invalid-feedback">
+                                    Kolom ini harus diisi!
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Gambar Produk -->
                         <div class="col-12">
                             <div id="image-inputs">
